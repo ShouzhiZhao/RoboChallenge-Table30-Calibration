@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>Label Frame</title>
+    </head>
+    <body>
+        <style>
+body{
+    margin:0px;
+}
+#canvas{
+    height:100%;
+}
+#point_container{
+    position:absolute;
+    top:0;
+    left:0;
+}
+.point{
+    position:absolute;
+    border-width:2px;
+    border-style:solid;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-left:-7px;
+    margin-top:-7px;
+}
+#banner{
+    display:inline-block;
+    vertical-align: top;
+    padding-left:20px;
+}
+#btn_prev{
+    font-size:150%;
+    color:blue;
+    text-decoration: underline;
+}
+#btn_next{
+    font-size:150%;
+    color:blue;
+    text-decoration: underline;
+}
+        </style>
+        <img id="canvas" src = "{{url_for('get_frame', idx = info.frameid, path = info.path, size = '640x480')}}"">
+        <div id="banner">
+            <div style="height:20px;color:#f00">left rack left</div>
+            <div style="height:20px;color:#db0">left tip left</div>
+            <div style="height:20px;color:#bd0">left tip right</div>
+            <div style="height:20px;color:#0a0">left rack right</div>
+            <div style="height:20px;color:#0db">right rack left</div>
+            <div style="height:20px;color:#0bd">right tip left</div>
+            <div style="height:20px;color:#08d">right tip right</div>
+            <div style="height:20px;color:#00d">right rack right</div>
+
+            {% if info.taskid > 0 %}
+            <a href="{{url_for('label_frame', robot_name=info.robot_name, taskid=info.taskid - 1)}}" id="btn_prev"><div id="btn_prev">Prev Task</div></a>
+            {% endif %}
+            {% if info.taskid < 999 %}
+            <a href="{{url_for('label_frame', robot_name=info.robot_name, taskid=info.taskid + 1)}}" id="btn_next"><div id="btn_next">Next Task</div></a>
+            {% endif %}
+        </div>
+        <div id="point_container">
+            <div id="point0" class="point" style="border-color:#f00"></div>
+            <div id="point1" class="point" style="border-color:#db0"></div>
+            <div id="point2" class="point" style="border-color:#bd0"></div>
+            <div id="point3" class="point" style="border-color:#0a0"></div>
+            <div id="point4" class="point" style="border-color:#0db"></div>
+            <div id="point5" class="point" style="border-color:#0bd"></div>
+            <div id="point6" class="point" style="border-color:#08d"></div>
+            <div id="point7" class="point" style="border-color:#00d"></div>
+
+        </div>
+<script>
+window.onload=function(){
+    var img_canvas = document.getElementById("canvas");
+    var width = img_canvas.width;
+    var labeled = {{info.labeled | tojson}};
+    var num_points = 8;
+    var bb = img_canvas.getClientRects()[0];
+    for (var i = 0; i < num_points; i ++){
+        var x, y;
+        if (labeled['point' + i]){
+            x = labeled['point'+i][0] * bb.width;
+            y = labeled['point'+i][1] * bb.height;
+        }else{
+            x = width + 10;
+            y = 10 + 20 * i;
+        }
+        document.getElementById("point" + i).style.left = x;
+        document.getElementById("point" + i).style.top = y;
+    }
+    var mousexy = [0, 0];
+    document.body.onmousemove = function(ev){
+        mousexy[0] = ev.clientX - bb.left;
+        mousexy[1] = ev.clientY - bb.top;
+    }
+    document.body.onkeypress = function(ev){
+        if (ev.key >= '1' && ev.key <= ''+num_points){
+            var idx = parseInt(ev.key) - 1;
+            var point = document.getElementById("point" + idx);
+            var x = mousexy[0] / bb.width;
+            var y = mousexy[1] / bb.height;
+            if (0 <= x && x <= 1 && 0 <= y && y <= 1){
+                labeled['point' + idx] = [x, y];
+                point.style.left = mousexy[0] + "px";
+                point.style.top = mousexy[1] + "px";
+            }else{
+                delete labeled['point' + idx];
+                point.style.left = (width + 10) + "px";
+                point.style.top = (10 + 20 * idx) + "px";
+            }
+            fetch("{{url_for('set_label', frameid=info.frameid, path=info.path)}}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(labeled)
+            });
+        }
+    }
+}
+</script>
+    </body>
+</html>

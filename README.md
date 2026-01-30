@@ -356,6 +356,7 @@ Where:
 
 #### Aloha (Dual Arm)
 **Left Arm:**
+
 $$
 \begin{aligned}
 \mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
@@ -364,6 +365,7 @@ $$
 $$
 
 **Right Arm:**
+
 $$
 \begin{aligned}
 \mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
@@ -389,6 +391,7 @@ $$
 
 #### UR5
 *(Note the axis swap)*
+
 $$
 \begin{aligned}
 \mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} \frac{w}{2} + dy \\ -dx \\ dz \end{bmatrix} \\

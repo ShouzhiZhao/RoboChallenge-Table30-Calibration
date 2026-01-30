@@ -356,6 +356,7 @@ $$
 
 #### Aloha（双臂）
 **左臂：**
+
 $$
 \begin{aligned}
 \mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
@@ -364,6 +365,7 @@ $$
 $$
 
 **右臂：**
+
 $$
 \begin{aligned}
 \mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\

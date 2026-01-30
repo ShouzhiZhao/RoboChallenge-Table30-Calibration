@@ -318,7 +318,7 @@ task_name:
 **公式：**
 
 $$
-s \left[\begin{array}{c} u \\ v \\ 1 \end{array}\right] = \mathbf{K} \left( \mathbf{R} \left[\begin{array}{c} x \\ y \\ z \end{array}\right] + \mathbf{t} \right)
+s \left[ u, v, 1 \right]^{T} = \mathbf{K} \left( \mathbf{R} \left[ x, y, z \right]^{T} + \mathbf{t} \right)
 $$
 
 其中：
@@ -359,8 +359,8 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -368,24 +368,24 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
 #### ARX5
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T}
 \end{aligned}
 $$
 
 #### Franka
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -394,8 +394,8 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} \frac{w}{2} + dy \\ -dx \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -\frac{w}{2} - dy \\ -dx \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ \frac{w}{2} + dy, -dx, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ -\frac{w}{2} - dy, -dx, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -459,7 +459,7 @@ $$
 2.  **标注噪声**：人工标注关键点（例如夹爪指尖）不可避免会引入误差，从而影响模型拟合。
 3.  **数据分布偏移**：Table30 数据集中许多任务存在严重遮挡，因此可标注的数据可能集中在机器人可见的某些区域或角落，进而产生分布偏移并影响对整个工作空间的泛化。
 4.  **机械/安装不稳定**：机器人运动时可能出现抖动，或采集过程中相机略有位移，都会造成记录状态与真实物理配置不一致。
-5.  **PnP 内参未知**：若相机内参未知且从同一批标注数据估计，得到的外参可能会引入额外偏差或方差。
+5.  **PnP 内参未知**：若相机内参未知且从同一批标注数据估计，得到的外参可能会引入额外偏差或方差。因此，PnP 方法的结果通常不如 Project2D 方法。
 
 为提升标定精度，建议**标注更多且覆盖更广的帧**，尽量覆盖不同的机器人位姿与工作空间位置。
 

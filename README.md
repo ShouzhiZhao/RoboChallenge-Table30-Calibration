@@ -318,7 +318,7 @@ This method uses the classical pinhole camera model. It estimates the 6D pose (R
 **Formula:**
 
 $$
-s \left[\begin{array}{c} u \\ v \\ 1 \end{array}\right] = \mathbf{K} \left( \mathbf{R} \left[\begin{array}{c} x \\ y \\ z \end{array}\right] + \mathbf{t} \right)
+s \left[ u, v, 1 \right]^{T} = \mathbf{K} \left( \mathbf{R} \left[ x, y, z \right]^{T} + \mathbf{t} \right)
 $$
 
 Where:
@@ -359,8 +359,8 @@ Where:
 
 $$
 \begin{aligned}
-\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -368,24 +368,24 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
 #### ARX5
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T}
 \end{aligned}
 $$
 
 #### Franka
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, \frac{w}{2} + dy, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ dx, -\frac{w}{2} - dy, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -394,8 +394,8 @@ $$
 
 $$
 \begin{aligned}
-\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} \frac{w}{2} + dy \\ -dx \\ dz \end{bmatrix} \\
-\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -\frac{w}{2} - dy \\ -dx \\ dz \end{bmatrix}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ \frac{w}{2} + dy, -dx, dz \right]^{T} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \left[ -\frac{w}{2} - dy, -dx, dz \right]^{T}
 \end{aligned}
 $$
 
@@ -459,7 +459,7 @@ Several factors may contribute to the calibration errors:
 2.  **Annotation Noise**: Manual labeling of keypoints (e.g., gripper tips) inevitably introduces some human error, which can affect the model fitting process.
 3.  **Data Distribution Shift**: The Table30 dataset suffers from severe occlusion in many tasks. Consequently, the labeled data may be concentrated in specific areas or corners where the robot is visible, leading to a distribution shift that affects generalization across the entire workspace.
 4.  **Mechanical Instability**: The robot arm may exhibit jitter during motion, or the camera might have shifted slightly during the data collection process, causing inconsistencies between the recorded robot state and the actual physical configuration.
-5.  **PnP Unknown Intrinsics**: If camera intrinsics are not known and are estimated from the same labeled data, the resulting extrinsics can inherit additional bias or variance.
+5.  **PnP Unknown Intrinsics**: If camera intrinsics are not known and are estimated from the same labeled data, the resulting extrinsics can inherit additional bias or variance. For this reason, PnP results are often worse than Project2D.
 
 To improve calibration accuracy, we recommend **annotating a larger and more diverse set of frames**, ensuring coverage of different robot poses and workspace locations.
 

@@ -1,5 +1,7 @@
 # RoboChallenge-Table30-Calibration
 
+[English](README.md) | [中文](README_CN.md)
+
 This project provides a comprehensive workflow for the **post-hoc calibration** of the [RoboChallenge/Table30](https://huggingface.co/datasets/RoboChallenge/Table30) dataset. It enables accurate projection from robot 3D coordinates to camera 2D image coordinates, facilitating visual feedback and data alignment for the diverse manipulation tasks in the Table30 benchmark.
 
 ## Table of Contents
@@ -355,33 +357,43 @@ Where:
 #### Aloha (Dual Arm)
 **Left Arm:**
 $$
-\mathbf{P}_{left} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{right} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 **Right Arm:**
 $$
-\mathbf{P}_{left} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{right} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### ARX5
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### Franka
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### UR5
 *(Note the axis swap)*
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} w/2 + dy \\ -dx \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -w/2 - dy \\ -dx \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} \frac{w}{2} + dy \\ -dx \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -\frac{w}{2} - dy \\ -dx \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 ## Results

@@ -1,6 +1,8 @@
 # RoboChallenge-Table30-Calibration（中文说明）
 
-本项目提供了一套用于 [RoboChallenge/Table30](https://huggingface.co/datasets/RoboChallenge/Table30) 数据集的**事后标定（post-hoc calibration）**完整工作流。它支持将机器人 3D 坐标精确投影到相机 2D 图像坐标，从而为 Table30 基准中多样化的操作任务提供视觉反馈与数据对齐能力。
+[中文](README_CN.md) | [English](README.md)
+
+本项目提供了一套用于 [RoboChallenge/Table30](https://huggingface.co/datasets/RoboChallenge/Table30) 数据集的**后标定（post-hoc calibration）**完整工作流。它支持将机器人 3D 坐标精确投影到相机 2D 图像坐标，从而为 Table30 基准中多样化的操作任务提供视觉反馈与数据对齐能力。
 
 ## 目录
 
@@ -355,33 +357,44 @@ $$
 #### Aloha（双臂）
 **左臂：**
 $$
-\mathbf{P}_{left} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{right} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 **右臂：**
 $$
-\mathbf{P}_{left} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{right} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{\text{left}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{\text{right}} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### ARX5
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### Franka
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ w/2 + dy \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -w/2 - dy \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ \frac{w}{2} + dy \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} dx \\ -\frac{w}{2} - dy \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 #### UR5
 *（注意坐标轴交换）*
+
 $$
-\mathbf{P}_{1} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} w/2 + dy \\ -dx \\ dz \end{bmatrix}, \quad
-\mathbf{P}_{2} = \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -w/2 - dy \\ -dx \\ dz \end{bmatrix}
+\begin{aligned}
+\mathbf{P}_{1} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} \frac{w}{2} + dy \\ -dx \\ dz \end{bmatrix} \\
+\mathbf{P}_{2} &= \mathbf{p}_{ee} + \mathbf{R} \cdot \begin{bmatrix} -\frac{w}{2} - dy \\ -dx \\ dz \end{bmatrix}
+\end{aligned}
 $$
 
 ## Results

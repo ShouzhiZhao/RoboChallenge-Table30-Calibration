@@ -318,7 +318,7 @@ This method uses the classical pinhole camera model. It estimates the 6D pose (R
 **Formula:**
 
 $$
-s \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} = \mathbf{K} \left( \mathbf{R} \begin{bmatrix} x \\ y \\ z \end{bmatrix} + \mathbf{t} \right)
+s \left[\begin{array}{c} u \\ v \\ 1 \end{array}\right] = \mathbf{K} \left( \mathbf{R} \left[\begin{array}{c} x \\ y \\ z \end{array}\right] + \mathbf{t} \right)
 $$
 
 Where:

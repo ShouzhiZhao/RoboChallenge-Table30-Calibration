@@ -51,8 +51,6 @@ coverage.xml
 Thumbs.db
 
 # Project specific
-pnp/results/
-project2d/results/
 *.bak
 
 # Logs

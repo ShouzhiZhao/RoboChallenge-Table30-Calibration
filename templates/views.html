@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select View - {{ task_name }}</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .view-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .view-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+            overflow: hidden;
+        }
+
+        .view-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        a.view-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 25px;
+        }
+
+        strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+        
+        .counts {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="back-link">← Back to Tasks</a>
+        
+        <h1>Select View for {{ task_name }}</h1>
+        
+        <ul class="view-grid">
+            {% for view in views %}
+            <li class="view-item">
+                <a href="{{ url_for('label_frame', task_name=task_name, view_name=view, taskid=0) }}" class="view-link">
+                    <strong>{{ view }}</strong>
+                    <div class="counts">{{ task_counts.get(task_name + '/' + view, 0) }} frames</div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

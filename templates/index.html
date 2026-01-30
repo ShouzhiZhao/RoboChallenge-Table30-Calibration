@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Navigation</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        p {
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        
+        .task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .task-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: all 0.2s ease;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+        
+        .task-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: #bfdbfe;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+            height: 100%;
+        }
+        
+        strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+        
+        .task-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f3f4f6;
+        }
+        
+        .status {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+        
+        .arrow-icon {
+            color: #9ca3af;
+            transition: transform 0.2s;
+        }
+        
+        .task-item:hover .arrow-icon {
+            transform: translateX(4px);
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Navigation</h1>
+        <p>Select a task from the list below to proceed.</p>
+        
+        <ul class="task-grid">
+            {% for task_name in task_list %}
+            <li class="task-item">
+                <a href="{{ url_for('task_views', task_name=task_name) }}">
+                    <strong>{{ task_name }}</strong>
+                    <div class="task-meta">
+                        <span class="status">{{ tasks_views.get(task_name, [])|length }} views</span>
+                        <span class="arrow-icon">→</span>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

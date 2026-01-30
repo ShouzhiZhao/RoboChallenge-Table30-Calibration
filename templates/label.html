@@ -1,115 +1,474 @@
-<html>
-    <head>
-        <title>Label Frame</title>
-    </head>
-    <body>
-        <style>
-body{
-    margin:0px;
-}
-#canvas{
-    height:100%;
-}
-#point_container{
-    position:absolute;
-    top:0;
-    left:0;
-}
-.point{
-    position:absolute;
-    border-width:2px;
-    border-style:solid;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    margin-left:-7px;
-    margin-top:-7px;
-}
-#banner{
-    display:inline-block;
-    vertical-align: top;
-    padding-left:20px;
-}
-#btn_prev{
-    font-size:150%;
-    color:blue;
-    text-decoration: underline;
-}
-#btn_next{
-    font-size:150%;
-    color:blue;
-    text-decoration: underline;
-}
-        </style>
-        <img id="canvas" src = "{{url_for('get_frame', idx = info.frameid, path = info.path, size = '640x480')}}"">
-        <div id="banner">
-            <div style="height:20px;color:#f00">left rack left</div>
-            <div style="height:20px;color:#db0">left tip left</div>
-            <div style="height:20px;color:#bd0">left tip right</div>
-            <div style="height:20px;color:#0a0">left rack right</div>
-            <div style="height:20px;color:#0db">right rack left</div>
-            <div style="height:20px;color:#0bd">right tip left</div>
-            <div style="height:20px;color:#08d">right tip right</div>
-            <div style="height:20px;color:#00d">right rack right</div>
-
-            {% if info.taskid > 0 %}
-            <a href="{{url_for('label_frame', robot_name=info.robot_name, taskid=info.taskid - 1)}}" id="btn_prev"><div id="btn_prev">Prev Task</div></a>
-            {% endif %}
-            {% if info.taskid < 999 %}
-            <a href="{{url_for('label_frame', robot_name=info.robot_name, taskid=info.taskid + 1)}}" id="btn_next"><div id="btn_next">Next Task</div></a>
-            {% endif %}
-        </div>
-        <div id="point_container">
-            <div id="point0" class="point" style="border-color:#f00"></div>
-            <div id="point1" class="point" style="border-color:#db0"></div>
-            <div id="point2" class="point" style="border-color:#bd0"></div>
-            <div id="point3" class="point" style="border-color:#0a0"></div>
-            <div id="point4" class="point" style="border-color:#0db"></div>
-            <div id="point5" class="point" style="border-color:#0bd"></div>
-            <div id="point6" class="point" style="border-color:#08d"></div>
-            <div id="point7" class="point" style="border-color:#00d"></div>
-
-        </div>
-<script>
-window.onload=function(){
-    var img_canvas = document.getElementById("canvas");
-    var width = img_canvas.width;
-    var labeled = {{info.labeled | tojson}};
-    var num_points = 8;
-    var bb = img_canvas.getClientRects()[0];
-    for (var i = 0; i < num_points; i ++){
-        var x, y;
-        if (labeled['point' + i]){
-            x = labeled['point'+i][0] * bb.width;
-            y = labeled['point'+i][1] * bb.height;
-        }else{
-            x = width + 10;
-            y = 10 + 20 * i;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Frame - {{ info.task_name }}</title>
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg-color: #f3f4f6;
+            --sidebar-bg: #ffffff;
+            --text-color: #1f2937;
+            --border-color: #e5e7eb;
         }
-        document.getElementById("point" + i).style.left = x;
-        document.getElementById("point" + i).style.top = y;
-    }
-    var mousexy = [0, 0];
-    document.body.onmousemove = function(ev){
-        mousexy[0] = ev.clientX - bb.left;
-        mousexy[1] = ev.clientY - bb.top;
-    }
-    document.body.onkeypress = function(ev){
-        if (ev.key >= '1' && ev.key <= ''+num_points){
-            var idx = parseInt(ev.key) - 1;
-            var point = document.getElementById("point" + idx);
-            var x = mousexy[0] / bb.width;
-            var y = mousexy[1] / bb.height;
-            if (0 <= x && x <= 1 && 0 <= y && y <= 1){
-                labeled['point' + idx] = [x, y];
-                point.style.left = mousexy[0] + "px";
-                point.style.top = mousexy[1] + "px";
-            }else{
-                delete labeled['point' + idx];
-                point.style.left = (width + 10) + "px";
-                point.style.top = (10 + 20 * idx) + "px";
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow: auto;
+            position: relative;
+        }
+
+        #canvas-wrapper {
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            width: auto;
+            max-width: 100%;
+        }
+
+        #canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        #sidebar {
+            width: 320px;
+            background-color: var(--sidebar-bg);
+            border-left: 1px solid var(--border-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .header h2 {
+            margin: 0 0 5px 0;
+            font-size: 1.25rem;
+            color: #111827;
+        }
+        
+        /* Navigation Menu */
+        .nav-menu {
+            position: relative;
+            margin-bottom: 10px;
+            width: fit-content;
+            min-width: 290px;
+        }
+        
+        .nav-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 8px 12px;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: all 0.2s;
+        }
+        
+        .nav-trigger:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .nav-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 100%;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            margin-top: 4px;
+        }
+        
+        .nav-dropdown.show {
+            display: block;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            border-bottom: 1px solid #f3f4f6;
+            white-space: nowrap;
+        }
+        
+        .nav-item:last-child {
+            border-bottom: none;
+        }
+        
+        .nav-item:hover {
+            background-color: #f9fafb;
+            color: var(--primary-color);
+        }
+        
+        .nav-item.active {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .meta-info {
+            font-size: 0.875rem;
+            color: #6b7280;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .point-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            background-color: #f9fafb;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .legend-item:hover {
+            border-color: var(--border-color);
+            background-color: #fff;
+        }
+
+        .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid rgba(0,0,0,0.1);
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn.disabled {
+            background-color: #d1d5db;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Points on canvas */
+        .point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border-width: 2px;
+            border-style: solid;
+            background-color: transparent; /* Transparent center */
+            box-shadow: 0 0 2px rgba(0,0,0,0.8), inset 0 0 2px rgba(0,0,0,0.8); /* Shadow for visibility on light/dark bg */
+            transform: translate(-50%, -50%) !important; /* Center the point on the coordinate */
+            pointer-events: none; /* Let clicks pass through to canvas wrapper if needed */
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <div id="canvas-wrapper">
+            <img id="canvas" src="{{url_for('get_frame', task_name=info.task_name, idx=info.frameid, path=info.path)}}">
+            <div id="point_container">
+                {% for name in info.point_names %}
+                    <div id="point{{loop.index0}}" class="point" style="border-color:{{['#ef4444', '#f59e0b', '#84cc16', '#10b981', '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6'][loop.index0 % 8]}}; display: none;"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div class="header">
+            <div class="nav-menu">
+                <div class="nav-trigger" onclick="toggleNav()">
+                    <span>{{ info.task_name }}</span>
+                    <span style="font-size: 0.8rem;">▼</span>
+                </div>
+                <div id="nav-dropdown" class="nav-dropdown">
+                    <a href="{{ url_for('task_views', task_name=info.task_name) }}" class="nav-item" style="border-bottom: 2px solid #e5e7eb;">← Back to Views</a>
+                    {% for task in info.task_list %}
+                        {% if task.startswith(info.task_name + '/') %}
+                            {% set current_view = task.split('/')[-1] %}
+                            <a href="{{ url_for('label_frame', task_name=info.task_name, view_name=current_view, taskid=0) }}" class="nav-item {% if current_view == info.view_name %}active{% endif %}">
+                                {{ current_view }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="meta-info">
+                <span>Task ID: {{ info.taskid }}</span>
+                <span>Frame ID: {{ info.frameid }}</span>
+                <span>View: {{ info.view_name }}</span>
+            </div>
+        </div>
+
+        <div class="point-legend">
+            <h3>Keypoints</h3>
+            {% for name in info.point_names %}
+                <div class="legend-item">
+                    <span class="color-dot" style="background-color:{{['#ef4444', '#f59e0b', '#84cc16', '#10b981', '#06b6d4', '#3b82f6', '#6366f1', '#8b5cf6'][loop.index0 % 8]}}"></span>
+                    <span><strong>{{ loop.index0 + 1 }}</strong>: {{ name }}</span>
+                </div>
+            {% endfor %}
+            <button id="btn-clear" class="btn" style="background-color: #ef4444; margin-top: 10px;">Clear All Labels</button>
+        </div>
+
+        <div class="controls">
+            {% if info.taskid > 0 %}
+                <a id="btn-prev" href="{{url_for('label_frame', task_name=info.task_name, view_name=info.view_name, taskid=info.taskid - 1)}}" class="btn">Previous</a>
+            {% else %}
+                <a id="btn-prev" class="btn disabled">Previous</a>
+            {% endif %}
+
+            {% if info.taskid < 999999 %}
+                <a id="btn-next" href="{{url_for('label_frame', task_name=info.task_name, view_name=info.view_name, taskid=info.taskid + 1)}}" class="btn">Next</a>
+            {% else %}
+                <a id="btn-next" class="btn disabled">Next</a>
+            {% endif %}
+        </div>
+    </div>
+
+<script>
+function toggleNav() {
+    var dropdown = document.getElementById("nav-dropdown");
+    dropdown.classList.toggle("show");
+}
+
+// Close dropdown when clicking outside
+window.onclick = function(event) {
+    if (!event.target.matches('.nav-trigger') && !event.target.matches('.nav-trigger *')) {
+        var dropdowns = document.getElementsByClassName("nav-dropdown");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
             }
-            fetch("{{url_for('set_label', frameid=info.frameid, path=info.path)}}", {
+        }
+    }
+}
+
+window.onload = function(){
+    var img = document.getElementById("canvas");
+    var labeled = {{info.labeled | tojson}};
+    var num_points = {{info.point_names|length}};
+    var bb;
+
+    function resizeCanvas() {
+        var wrapper = document.getElementById("canvas-wrapper");
+        if (!img.naturalWidth) return;
+
+        var screenW = window.innerWidth;
+        var screenH = window.innerHeight;
+        
+        // Target constraints
+        var maxW = screenW * 0.8; // Max 80% of screen width
+        var maxH = screenH * 0.9; // Max 90% of screen height
+        
+        var imgW = img.naturalWidth;
+        var imgH = img.naturalHeight;
+        var ratio = imgW / imgH;
+        
+        // Try fitting to width first
+        var finalW = maxW;
+        var finalH = finalW / ratio;
+        
+        // If height overflows, fit to height
+        if (finalH > maxH) {
+            finalH = maxH;
+            finalW = finalH * ratio;
+        }
+        
+        // Apply width to wrapper. Image is width: 100% so it follows.
+        wrapper.style.width = finalW + "px";
+        
+        // Trigger point update after resize
+        update_points();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    img.onload = function() {
+        resizeCanvas();
+        update_points();
+    };
+
+    function update_points() {
+        bb = img.getBoundingClientRect();
+        
+        for (var i = 0; i < num_points; i++) {
+            var point_el = document.getElementById("point" + i);
+            if (!point_el) continue;
+
+            if (labeled['point' + i]) {
+                var u = labeled['point' + i][0];
+                var v = labeled['point' + i][1];
+                
+                // Calculate absolute position relative to the canvas-wrapper (which is relative)
+                // Actually, points are inside #point_container which is inside #canvas-wrapper
+                // So left/top should be percentage or pixels relative to the wrapper size.
+                
+                // Since #canvas-wrapper fits the image size exactly (hopefully),
+                // we can just use percentage for responsiveness!
+                point_el.style.left = (u * 100) + "%";
+                point_el.style.top = (v * 100) + "%";
+                point_el.style.display = "block";
+            } else {
+                point_el.style.display = "none";
+            }
+        }
+    }
+    
+    // Initial update
+    // We need to wait for image to load to get correct bounding rect if we used pixels,
+    // but with percentages we just need to know it's there. 
+    // However, keeping update logic separated is good.
+    // update_points(); // Called by resizeCanvas
+    resizeCanvas(); // Try resizing immediately if image is cached
+    
+    // Also update when image loads (just in case)
+    // img.onload = update_points; // Already handled above
+
+    // Clear Labels Functionality
+    document.getElementById("btn-clear").onclick = function() {
+        if (confirm("Are you sure you want to clear all labels for this frame?")) {
+            for (var i = 0; i < num_points; i++) {
+                delete labeled['point' + i];
+            }
+            update_points();
+            
+            // Send update to server (empty labeled object)
+            fetch("{{url_for('set_label', task_name=info.task_name, view_name=info.view_name, frameid=info.frameid, path=info.path)}}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(labeled)
+            });
+        }
+    };
+
+    var mousexy = [0, 0];
+    
+    // Keyboard navigation (WASD + Arrows)
+    document.addEventListener('keydown', function(ev) {
+        // Ignore if focus is in an input or textarea
+        if (ev.target.tagName === 'INPUT' || ev.target.tagName === 'TEXTAREA') return;
+
+        var key = ev.key.toLowerCase();
+        
+        // Previous: a, w, ArrowLeft, ArrowUp
+        if (key === 'a' || key === 'w' || key === 'arrowleft' || key === 'arrowup') {
+            var btn = document.getElementById('btn-prev');
+            if (btn && !btn.classList.contains('disabled')) {
+                btn.click();
+            }
+        }
+        
+        // Next: d, s, ArrowRight, ArrowDown
+        if (key === 'd' || key === 's' || key === 'arrowright' || key === 'arrowdown') {
+            var btn = document.getElementById('btn-next');
+            if (btn && !btn.classList.contains('disabled')) {
+                btn.click();
+            }
+        }
+    });
+
+    document.body.onmousemove = function(ev){
+        mousexy[0] = ev.clientX;
+        mousexy[1] = ev.clientY;
+    }
+
+    document.body.onkeypress = function(ev){
+        var key = parseInt(ev.key);
+        var idx = key - 1; 
+        
+        if (idx >= 0 && idx < num_points) {
+            // Re-get bounding rect in case of resize
+            bb = img.getBoundingClientRect();
+            
+            // Mouse relative to image
+            var rel_x = mousexy[0] - bb.left;
+            var rel_y = mousexy[1] - bb.top;
+            
+            var norm_x = rel_x / bb.width;
+            var norm_y = rel_y / bb.height;
+            
+            if (0 <= norm_x && norm_x <= 1 && 0 <= norm_y && norm_y <= 1){
+                labeled['point' + idx] = [norm_x, norm_y];
+            } else {
+                delete labeled['point' + idx];
+            }
+            
+            update_points();
+            
+            fetch("{{url_for('set_label', task_name=info.task_name, view_name=info.view_name, frameid=info.frameid, path=info.path)}}", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -120,5 +479,5 @@ window.onload=function(){
     }
 }
 </script>
-    </body>
+</body>
 </html>

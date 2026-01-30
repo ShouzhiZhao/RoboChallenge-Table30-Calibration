@@ -1,0 +1,893 @@
+{
+  "episode_000000/videos/side_realsense_rgb.mp4_602": {
+    "point0": [
+      0.43680697826683845,
+      0.16972683751056042
+    ],
+    "point1": [
+      0.4814138171373054,
+      0.14539566319346664
+    ]
+  },
+  "episode_000001/videos/side_realsense_rgb.mp4_87": {
+    "point0": [
+      0.4976344858174752,
+      0.25803998873556744
+    ]
+  },
+  "episode_000002/videos/side_realsense_rgb.mp4_427": {
+    "point0": [
+      0.47871037235727715,
+      0.13908758096310897
+    ],
+    "point1": [
+      0.4476207573869517,
+      0.08231484088989018
+    ]
+  },
+  "episode_000003/videos/side_realsense_rgb.mp4_469": {
+    "point0": [
+      0.4199104483916616,
+      0.21117994931005352
+    ]
+  },
+  "episode_000004/videos/side_realsense_rgb.mp4_12": {
+    "point0": [
+      0.3259657422856781,
+      0.3373415939172064
+    ]
+  },
+  "episode_000005/videos/side_realsense_rgb.mp4_627": {
+    "point0": [
+      0.43072422751177475,
+      0.0588848211771332
+    ]
+  },
+  "episode_000006/videos/side_realsense_rgb.mp4_1239": {
+    "point0": [
+      0.3746277483261875,
+      0.33193466629118556
+    ]
+  },
+  "episode_000007/videos/side_realsense_rgb.mp4_348": {
+    "point0": [
+      0.45100006336198706,
+      0.7744015770205576
+    ]
+  },
+  "episode_000008/videos/side_realsense_rgb.mp4_1181": {
+    "point0": [
+      0.4023380573214776,
+      0.5157702055758941
+    ],
+    "point1": [
+      0.46654487084714974,
+      0.39862010701210926
+    ]
+  },
+  "episode_000009/videos/side_realsense_rgb.mp4_576": {
+    "point0": [
+      0.49020001267239743,
+      0.2661503801745987
+    ],
+    "point1": [
+      0.5030413753775318,
+      0.24812728808786258
+    ]
+  },
+  "episode_000011/videos/side_realsense_rgb.mp4_511": {
+    "point0": [
+      0.5266965172027794,
+      0.2661503801745987
+    ]
+  },
+  "episode_000012/videos/side_realsense_rgb.mp4_447": {
+    "point0": [
+      0.513179293302638,
+      0.29859194593072375
+    ]
+  },
+  "episode_000014/videos/side_realsense_rgb.mp4_633": {
+    "point0": [
+      0.5091241261325955,
+      0.4202478175161926
+    ],
+    "point1": [
+      0.540213741102921,
+      0.39771895240777244
+    ]
+  },
+  "episode_000015/videos/side_realsense_rgb.mp4_956": {
+    "point0": [
+      0.4246414767567111,
+      0.2499295972965362
+    ]
+  },
+  "episode_000020/videos/side_realsense_rgb.mp4_403": {
+    "point0": [
+      0.504393097767546,
+      0.18774992959729653
+    ],
+    "point1": [
+      0.5523792426130484,
+      0.13007603491974093
+    ]
+  },
+  "episode_000018/videos/side_realsense_rgb.mp4_988": {
+    "point0": [
+      0.4537035081420153,
+      0.23641227823148409
+    ]
+  },
+  "episode_000016/videos/side_realsense_rgb.mp4_1221": {
+    "point0": [
+      0.3530001900859611,
+      0.35536468600394255
+    ],
+    "point1": [
+      0.37530360952119457,
+      0.2598422979442411
+    ]
+  },
+  "episode_000021/videos/side_realsense_rgb.mp4_1008": {
+    "point0": [
+      0.396931167761421,
+      0.3887074063644044
+    ]
+  },
+  "episode_000022/videos/side_realsense_rgb.mp4_677": {
+    "point0": [
+      0.4847931231123408,
+      0.47521824838073784
+    ]
+  },
+  "episode_000023/videos/side_realsense_rgb.mp4_950": {
+    "point0": [
+      0.5740068008532747,
+      0.25533652492255704
+    ]
+  },
+  "episode_000024/videos/side_realsense_rgb.mp4_481": {
+    "point0": [
+      0.5199379052527088,
+      0.2922838637003661
+    ],
+    "point1": [
+      0.5381861575178998,
+      0.20667417628836948
+    ]
+  },
+  "episode_000026/videos/side_realsense_rgb.mp4_1093": {
+    "point0": [
+      0.4361311170718314,
+      0.39591664319909886
+    ],
+    "point1": [
+      0.3800346378862441,
+      0.3003942551393973
+    ]
+  },
+  "episode_000027/videos/side_realsense_rgb.mp4_1262": {
+    "point0": [
+      0.39625530656641395,
+      0.367079695860321
+    ]
+  },
+  "episode_000029/videos/side_realsense_rgb.mp4_1224": {
+    "point0": [
+      0.38341394386127947,
+      0.39591664319909886
+    ]
+  },
+  "episode_000030/videos/side_realsense_rgb.mp4_511": {
+    "point0": [
+      0.5125034321076309,
+      0.1417910447761194
+    ],
+    "point1": [
+      0.4881724290873762,
+      0.07690791326386934
+    ]
+  },
+  "episode_000031/videos/side_realsense_rgb.mp4_856": {
+    "point0": [
+      0.4908758738674045,
+      0.4067304984511405
+    ]
+  },
+  "episode_000032/videos/side_realsense_rgb.mp4_713": {
+    "point0": [
+      0.4570828141170507,
+      0.577048718670797
+    ]
+  },
+  "episode_000033/videos/side_realsense_rgb.mp4_12": {
+    "point0": [
+      0.3259657422856781,
+      0.3355392847085328
+    ]
+  },
+  "episode_000034/videos/side_realsense_rgb.mp4_698": {
+    "point0": [
+      0.41720700361163326,
+      0.09222754153759505
+    ]
+  },
+  "episode_000035/videos/side_realsense_rgb.mp4_622": {
+    "point0": [
+      0.531427545567829,
+      0.4004224162207829
+    ]
+  },
+  "episode_000036/videos/side_realsense_rgb.mp4_1034": {
+    "point0": [
+      0.47803451116227,
+      0.6779780343565193
+    ]
+  },
+  "episode_000037/videos/side_realsense_rgb.mp4_650": {
+    "point0": [
+      0.4678965932371639,
+      0.41213742607716136
+    ]
+  },
+  "episode_000038/videos/side_realsense_rgb.mp4_1009": {
+    "point0": [
+      0.4604621200920861,
+      0.4635032385243593
+    ]
+  },
+  "episode_000039/videos/side_realsense_rgb.mp4_1019": {
+    "point0": [
+      0.4070690856865271,
+      0.43827090960292875
+    ]
+  },
+  "episode_000040/videos/side_realsense_rgb.mp4_737": {
+    "point0": [
+      0.46924831562717806,
+      0.12647141650239369
+    ],
+    "point1": [
+      0.44491731260692335,
+      0.06429174880315404
+    ]
+  },
+  "episode_000041/videos/side_realsense_rgb.mp4_867": {
+    "point0": [
+      0.45302764694700826,
+      0.17423261053224443
+    ]
+  },
+  "episode_000042/videos/side_realsense_rgb.mp4_533": {
+    "point0": [
+      0.3644898304010814,
+      0.23460996902281048
+    ]
+  },
+  "episode_000043/videos/side_realsense_rgb.mp4_336": {
+    "point0": [
+      0.43207594990178894,
+      0.44818361025063364
+    ]
+  },
+  "episode_000044/videos/side_realsense_rgb.mp4_382": {
+    "point0": [
+      0.4929034574524257,
+      0.32742889326950153
+    ]
+  },
+  "episode_000045/videos/side_realsense_rgb.mp4_747": {
+    "point0": [
+      0.4537035081420153,
+      0.5860602647141651
+    ]
+  },
+  "episode_000046/videos/side_realsense_rgb.mp4_1169": {
+    "point0": [
+      0.36786913637611673,
+      0.35446353139960574
+    ]
+  },
+  "episode_000048/videos/side_realsense_rgb.mp4_1155": {
+    "point0": [
+      0.34894502291591867,
+      0.34094621233455363
+    ],
+    "point1": [
+      0.361110524426046,
+      0.24632497887918897
+    ]
+  },
+  "episode_000049/videos/side_realsense_rgb.mp4_644": {
+    "point0": [
+      0.5023655141825247,
+      0.5103632779498732
+    ]
+  },
+  "episode_000050/videos/side_realsense_rgb.mp4_1228": {
+    "point0": [
+      0.3232622975056498,
+      0.3364404393128696
+    ]
+  },
+  "episode_000051/videos/side_realsense_rgb.mp4_473": {
+    "point0": [
+      0.4570828141170507,
+      0.17603491974091806
+    ]
+  },
+  "episode_000052/videos/side_realsense_rgb.mp4_254": {
+    "point0": [
+      0.44694489619194455,
+      0.469811320754717
+    ]
+  },
+  "episode_000053/videos/side_realsense_rgb.mp4_1053": {
+    "point0": [
+      0.5652206053181827,
+      0.6960011264432554
+    ]
+  },
+  "episode_000054/videos/side_realsense_rgb.mp4_204": {
+    "point0": [
+      0.4219380319766828,
+      0.5265840608279357
+    ]
+  },
+  "episode_000055/videos/side_realsense_rgb.mp4_697": {
+    "point0": [
+      0.5956343590935012,
+      0.735651929034075
+    ]
+  },
+  "episode_000056/videos/side_realsense_rgb.mp4_179": {
+    "point0": [
+      0.3584070796460177,
+      0.43917206420726557
+    ]
+  },
+  "episode_000057/videos/side_realsense_rgb.mp4_760": {
+    "point0": [
+      0.44829661858195874,
+      0.5842579555054914
+    ]
+  },
+  "episode_000058/videos/side_realsense_rgb.mp4_431": {
+    "point0": [
+      0.5070965425475743,
+      0.46440439312869614
+    ]
+  },
+  "episode_000059/videos/side_realsense_rgb.mp4_560": {
+    "point0": [
+      0.3942277229813927,
+      0.3995212616164461
+    ]
+  },
+  "episode_000060/videos/side_realsense_rgb.mp4_379": {
+    "point0": [
+      0.4929034574524257,
+      0.4274570543508871
+    ]
+  },
+  "episode_000061/videos/side_realsense_rgb.mp4_1019": {
+    "point0": [
+      0.513179293302638,
+      0.4364686003942551
+    ]
+  },
+  "episode_000062/videos/side_realsense_rgb.mp4_853": {
+    "point0": [
+      0.4733034827972205,
+      0.6103914390312588
+    ]
+  },
+  "episode_000063/videos/side_realsense_rgb.mp4_1482": {
+    "point0": [
+      0.4638414260671215,
+      0.5482117713320191
+    ]
+  },
+  "episode_000064/videos/side_realsense_rgb.mp4_754": {
+    "point0": [
+      0.54967579783302,
+      0.21298225851872712
+    ]
+  },
+  "episode_000065/videos/side_realsense_rgb.mp4_562": {
+    "point0": [
+      0.3813863602762583,
+      0.5094621233455364
+    ]
+  },
+  "episode_000066/videos/side_realsense_rgb.mp4_194": {
+    "point0": [
+      0.4631655648721144,
+      0.665361869895804
+    ]
+  },
+  "episode_000067/videos/side_realsense_rgb.mp4_262": {
+    "point0": [
+      0.352324328890954,
+      0.6329203041396789
+    ]
+  },
+  "episode_000068/videos/side_realsense_rgb.mp4_482": {
+    "point0": [
+      0.5077724037425814,
+      0.36888200506899466
+    ]
+  },
+  "episode_000071/videos/side_realsense_rgb.mp4_713": {
+    "point0": [
+      0.45032420216697994,
+      0.2661503801745987
+    ]
+  },
+  "episode_000072/videos/side_realsense_rgb.mp4_472": {
+    "point0": [
+      0.41450355883160495,
+      0.6320191495353421
+    ]
+  },
+  "episode_000073/videos/side_realsense_rgb.mp4_1308": {
+    "point0": [
+      0.4550552305320295,
+      0.5869614193185019
+    ],
+    "point1": [
+      0.405717363296513,
+      0.46891016615038017
+    ]
+  },
+  "episode_000074/videos/side_realsense_rgb.mp4_1188": {
+    "point0": [
+      0.32664160348068516,
+      0.33914390312588005
+    ]
+  },
+  "episode_000075/videos/side_realsense_rgb.mp4_1238": {
+    "point0": [
+      0.4989862082074894,
+      0.34094621233455363
+    ],
+    "point1": [
+      0.5273723783977865,
+      0.2769642354266404
+    ]
+  },
+  "episode_000076/videos/side_realsense_rgb.mp4_872": {
+    "point0": [
+      0.43883456185185965,
+      0.40132357082511966
+    ]
+  },
+  "episode_000077/videos/side_realsense_rgb.mp4_1207": {
+    "point0": [
+      0.3719243035461592,
+      0.37879470571669954
+    ]
+  },
+  "episode_000079/videos/side_realsense_rgb.mp4_232": {
+    "point0": [
+      0.38341394386127947,
+      0.6878907350042242
+    ]
+  },
+  "episode_000080/videos/side_realsense_rgb.mp4_793": {
+    "point0": [
+      0.504393097767546,
+      0.29949310053506056
+    ]
+  },
+  "episode_000081/videos/side_realsense_rgb.mp4_512": {
+    "point0": [
+      0.4273449215367394,
+      0.1688256829062236
+    ]
+  },
+  "episode_000082/videos/side_realsense_rgb.mp4_1162": {
+    "point0": [
+      0.3692208587661309,
+      0.6383272317656998
+    ],
+    "point1": [
+      0.40977253046655543,
+      0.6076879752182484
+    ]
+  },
+  "episode_000083/videos/side_realsense_rgb.mp4_626": {
+    "point0": [
+      0.4847931231123408,
+      0.1544072092368347
+    ],
+    "point1": [
+      0.45100006336198706,
+      0.1012390875809631
+    ]
+  },
+  "episode_000085/videos/side_realsense_rgb.mp4_459": {
+    "point0": [
+      0.4104483916615625,
+      0.2544353703182202
+    ]
+  },
+  "episode_000086/videos/side_realsense_rgb.mp4_834": {
+    "point1": [
+      0.5489999366380129,
+      0.14629681779780343
+    ],
+    "point0": [
+      0.47871037235727715,
+      0.19315685722331738
+    ]
+  },
+  "episode_000087/videos/side_realsense_rgb.mp4_758": {
+    "point0": [
+      0.4280207827317465,
+      0.6022810475922276
+    ]
+  },
+  "episode_000089/videos/side_realsense_rgb.mp4_448": {
+    "point0": [
+      0.49966206940249647,
+      0.11926217966769924
+    ]
+  },
+  "episode_000092/videos/side_realsense_rgb.mp4_254": {
+    "point0": [
+      0.4908758738674045,
+      0.16702337369755
+    ]
+  },
+  "episode_000093/videos/side_realsense_rgb.mp4_598": {
+    "point0": [
+      0.5266965172027794,
+      0.3436496761475641
+    ]
+  },
+  "episode_000094/videos/side_realsense_rgb.mp4_602": {
+    "point0": [
+      0.5165585992776733,
+      0.5833568009011546
+    ]
+  },
+  "episode_000095/videos/side_realsense_rgb.mp4_616": {
+    "point0": [
+      0.4766827887722559,
+      0.24722613348352576
+    ]
+  },
+  "episode_000096/videos/side_realsense_rgb.mp4_195": {
+    "point0": [
+      0.43072422751177475,
+      0.3535623767952689
+    ]
+  },
+  "episode_000097/videos/side_realsense_rgb.mp4_719": {
+    "point0": [
+      0.41788286480664033,
+      0.4562940016896649
+    ]
+  },
+  "episode_000099/videos/side_realsense_rgb.mp4_77": {
+    "point0": [
+      0.43680697826683845,
+      0.43917206420726557
+    ]
+  },
+  "episode_000100/videos/side_realsense_rgb.mp4_1031": {
+    "point0": [
+      0.3726001647411663,
+      0.35266122219093216
+    ]
+  },
+  "episode_000101/videos/side_realsense_rgb.mp4_461": {
+    "point0": [
+      0.531427545567829,
+      0.28777809067868204
+    ]
+  },
+  "episode_000090/videos/side_realsense_rgb.mp4_869": {
+    "point0": [
+      0.48411726191733373,
+      0.7113207547169811
+    ]
+  },
+  "episode_000102/videos/side_realsense_rgb.mp4_831": {
+    "point0": [
+      0.4185587260016474,
+      0.31210926499577585
+    ]
+  },
+  "episode_000103/videos/side_realsense_rgb.mp4_1018": {
+    "point0": [
+      0.4476207573869517,
+      0.05347789355111236
+    ]
+  },
+  "episode_000104/videos/side_realsense_rgb.mp4_276": {
+    "point0": [
+      0.40639322449152004,
+      0.6950999718389186
+    ]
+  },
+  "episode_000105/videos/side_realsense_rgb.mp4_306": {
+    "point0": [
+      0.43342767229180307,
+      0.40853280765981415
+    ]
+  },
+  "episode_000106/videos/side_realsense_rgb.mp4_93": {
+    "point0": [
+      0.5010137917925106,
+      0.3472542945649113
+    ]
+  },
+  "episode_000107/videos/side_realsense_rgb.mp4_598": {
+    "point0": [
+      0.42869664392675355,
+      0.12466910729372008
+    ]
+  },
+  "episode_000108/videos/side_realsense_rgb.mp4_1427": {
+    "point0": [
+      0.2550003168099352,
+      0.47792171219374824
+    ],
+    "point1": [
+      0.33002090945572055,
+      0.413939735285835
+    ]
+  },
+  "episode_000109/videos/side_realsense_rgb.mp4_65": {
+    "point0": [
+      0.4212621707816757,
+      0.3778935511123627
+    ]
+  },
+  "episode_000111/videos/side_realsense_rgb.mp4_703": {
+    "point0": [
+      0.46654487084714974,
+      0.367079695860321
+    ]
+  },
+  "episode_000112/videos/side_realsense_rgb.mp4_585": {
+    "point0": [
+      0.5037172365725389,
+      0.09763446916361589
+    ]
+  },
+  "episode_000115/videos/side_realsense_rgb.mp4_223": {
+    "point0": [
+      0.3327243542357488,
+      0.3238242748521543
+    ],
+    "point1": [
+      0.35435191247597525,
+      0.2922838637003661
+    ]
+  },
+  "episode_000117/videos/side_realsense_rgb.mp4_457": {
+    "point0": [
+      0.4814138171373054,
+      0.31391157420444943
+    ]
+  },
+  "episode_000120/videos/side_realsense_rgb.mp4_389": {
+    "point0": [
+      0.46451728726212854,
+      0.3175161926217967
+    ],
+    "point1": [
+      0.44018628424187384,
+      0.2544353703182202
+    ]
+  },
+  "episode_000121/videos/side_realsense_rgb.mp4_388": {
+    "point0": [
+      0.3989587513464422,
+      0.4400732188116024
+    ]
+  },
+  "episode_000122/videos/side_realsense_rgb.mp4_846": {
+    "point0": [
+      0.5273723783977865,
+      0.33193466629118556
+    ],
+    "point1": [
+      0.5070965425475743,
+      0.2661503801745987
+    ]
+  },
+  "episode_000123/videos/side_realsense_rgb.mp4_721": {
+    "point0": [
+      0.5010137917925106,
+      0.6581526330611095
+    ]
+  },
+  "episode_000126/videos/side_realsense_rgb.mp4_957": {
+    "point0": [
+      0.3475933005259045,
+      0.3490566037735849
+    ]
+  },
+  "episode_000125/videos/side_realsense_rgb.mp4_189": {
+    "point0": [
+      0.39625530656641395,
+      0.3337369754998592
+    ]
+  },
+  "episode_000124/videos/side_realsense_rgb.mp4_377": {
+    "point0": [
+      0.40977253046655543,
+      0.45268938327231767
+    ]
+  },
+  "episode_000128/videos/side_realsense_rgb.mp4_767": {
+    "point0": [
+      0.47533106638224176,
+      0.12647141650239369
+    ],
+    "point1": [
+      0.45640695292204364,
+      0.06699521261616447
+    ]
+  },
+  "episode_000127/videos/side_realsense_rgb.mp4_158": {
+    "point0": [
+      0.4212621707816757,
+      0.21658687693607434
+    ]
+  },
+  "episode_000130/videos/side_realsense_rgb.mp4_261": {
+    "point0": [
+      0.3996346125414493,
+      0.6545480146437623
+    ],
+    "point1": [
+      0.4070690856865271,
+      0.5788510278794706
+    ]
+  },
+  "episode_000131/videos/side_realsense_rgb.mp4_1105": {
+    "point0": [
+      0.3259657422856781,
+      0.33914390312588005
+    ]
+  },
+  "episode_000132/videos/side_realsense_rgb.mp4_466": {
+    "point0": [
+      0.48546898430734786,
+      0.35266122219093216
+    ]
+  },
+  "episode_000133/videos/side_realsense_rgb.mp4_333": {
+    "point0": [
+      0.5165585992776733,
+      0.35896930442128977
+    ]
+  },
+  "episode_000135/videos/side_realsense_rgb.mp4_397": {
+    "point0": [
+      0.4476207573869517,
+      0.278766544635314
+    ]
+  },
+  "episode_000137/videos/side_realsense_rgb.mp4_1263": {
+    "point0": [
+      0.48411726191733373,
+      0.5644325542100816
+    ]
+  },
+  "episode_000139/videos/side_realsense_rgb.mp4_15": {
+    "point0": [
+      0.3232622975056498,
+      0.33914390312588005
+    ]
+  },
+  "episode_000138/videos/side_realsense_rgb.mp4_132": {
+    "point0": [
+      0.5246689336177582,
+      0.3778935511123627
+    ]
+  },
+  "episode_000141/videos/side_realsense_rgb.mp4_446": {
+    "point0": [
+      0.5456206306629776,
+      0.3571669952126162
+    ]
+  },
+  "episode_000150/videos/side_realsense_rgb.mp4_180": {
+    "point1": [
+      0.4266690603417323,
+      0.43917206420726557
+    ]
+  },
+  "episode_000151/videos/side_realsense_rgb.mp4_627": {
+    "point0": [
+      0.585496441168395,
+      0.6257110673049845
+    ]
+  },
+  "episode_000156/videos/side_realsense_rgb.mp4_202": {
+    "point0": [
+      0.3502967453059328,
+      0.4301605181638975
+    ]
+  },
+  "episode_000158/videos/side_realsense_rgb.mp4_915": {
+    "point0": [
+      0.3827380826662724,
+      0.7068149816952971
+    ],
+    "point1": [
+      0.4618138424821002,
+      0.6148972120529428
+    ]
+  },
+  "episode_000159/videos/side_realsense_rgb.mp4_521": {
+    "point0": [
+      0.4165311424166262,
+      0.4157420444945086
+    ]
+  },
+  "episode_000160/videos/side_realsense_rgb.mp4_1093": {
+    "point0": [
+      0.5030413753775318,
+      0.31120811039143903
+    ]
+  },
+  "episode_000161/videos/side_realsense_rgb.mp4_932": {
+    "point0": [
+      0.4814138171373054,
+      0.549112925936356
+    ]
+  },
+  "episode_000164/videos/side_realsense_rgb.mp4_642": {
+    "point0": [
+      0.504393097767546,
+      0.669867642917488
+    ]
+  },
+  "episode_000167/videos/side_realsense_rgb.mp4_513": {
+    "point0": [
+      0.5564344097830908,
+      0.7158265277386652
+    ]
+  },
+  "episode_000174/videos/side_realsense_rgb.mp4_460": {
+    "point0": [
+      0.4874965678923691,
+      0.5599267811883977
+    ]
+  },
+  "episode_000175/videos/side_realsense_rgb.mp4_808": {
+    "point0": [
+      0.5706274948782394,
+      0.35626584060827937
+    ],
+    "point1": [
+      0.5368344351278856,
+      0.2931850183047029
+    ]
+  },
+  "episode_000177/videos/side_realsense_rgb.mp4_1025": {
+    "point0": [
+      0.4408621454368809,
+      0.5725429456491129
+    ]
+  },
+  "episode_000176/videos/side_realsense_rgb.mp4_231": {},
+  "episode_000178/videos/side_realsense_rgb.mp4_1127": {
+    "point0": [
+      0.43342767229180307,
+      0.2571388341312306
+    ],
+    "point1": [
+      0.4712758992121993,
+      0.21117994931005352
+    ]
+  }
+}

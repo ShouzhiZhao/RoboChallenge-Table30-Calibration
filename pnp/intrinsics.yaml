@@ -1,0 +1,648 @@
+arrange_flowers:
+  robot: arx5_1
+  side_view:
+    fx: 426.93853759765625
+    fy: 426.93853759765625
+    cx: 429.01611328125
+    cy: 239.2858428955078
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.1672058105469
+    fy: 427.1672058105469
+    cx: 425.8807373046875
+    cy: 231.84600830078125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 430.0467224121094
+    fy: 430.0467224121094
+    cx: 432.4931335449219
+    cy: 242.5410919189453
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+arrange_fruits_in_basket:
+  robot: ur5_2
+  global_view:
+    fx: 430.4409484863281
+    fy: 430.4409484863281
+    cx: 427.6969909667969
+    cy: 242.4362030029297
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 426.4693298339844
+    fy: 426.4693298339844
+    cx: 428.9852600097656
+    cy: 244.34507751464844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+arrange_paper_cups:
+  robot: arx5_1
+  side_view:
+    fx: 426.93853759765625
+    fy: 426.93853759765625
+    cx: 429.01611328125
+    cy: 239.2858428955078
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.1672058105469
+    fy: 427.1672058105469
+    cx: 425.8807373046875
+    cy: 231.84600830078125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 430.0467224121094
+    fy: 430.0467224121094
+    cx: 432.4931335449219
+    cy: 242.5410919189453
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+clean_dining_table:
+  robot: aloha_4
+  right_wrist_view:
+    fx: 426.83135986328125
+    fy: 426.83135986328125
+    cx: 427.802001953125
+    cy: 242.96075439453125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.80926513671875
+    fy: 426.80926513671875
+    cx: 426.418701171875
+    cy: 246.9143829345703
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.2816162109375
+    fy: 426.2816162109375
+    cx: 427.83306884765625
+    cy: 240.04043579101562
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+fold_dishcloth:
+  robot: arx5_2
+  global_view:
+    fx: 427.3970031738281
+    fy: 427.3970031738281
+    cx: 425.15313720703125
+    cy: 234.65797424316406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.6697998046875
+    fy: 425.6697998046875
+    cx: 428.2857360839844
+    cy: 238.3005828857422
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.230712890625
+    fy: 427.230712890625
+    cx: 429.4078369140625
+    cy: 232.8637237548828
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+hang_toothbrush_cup:
+  robot: ur5_2
+  global_view:
+    fx: 430.4409484863281
+    fy: 430.4409484863281
+    cx: 427.6969909667969
+    cy: 242.4362030029297
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 426.4693298339844
+    fy: 426.4693298339844
+    cx: 428.9852600097656
+    cy: 244.34507751464844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+make_vegetarian_sandwich:
+  robot: aloha_3
+  right_wrist_view:
+    fx: 427.4950256347656
+    fy: 427.4950256347656
+    cx: 431.2913818359375
+    cy: 232.64627075195312
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 427.47137451171875
+    fy: 427.47137451171875
+    cx: 428.7495422363281
+    cy: 245.3848114013672
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 429.05499267578125
+    fy: 429.05499267578125
+    cx: 425.90643310546875
+    cy: 248.73873901367188
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+move_objects_into_box:
+  robot: franka_3
+  global_view:
+    fx: 427.2590026855469
+    fy: 427.2590026855469
+    cx: 426.32745361328125
+    cy: 244.90789794921875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 426.9692687988281
+    fy: 426.9692687988281
+    cx: 429.07965087890625
+    cy: 246.01527404785156
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 430.16204833984375
+    fy: 430.16204833984375
+    cx: 427.3890380859375
+    cy: 242.2689666748047
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+open_the_drawer:
+  robot: arx5_1
+  side_view:
+    fx: 426.93853759765625
+    fy: 426.93853759765625
+    cx: 429.01611328125
+    cy: 239.2858428955078
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.1672058105469
+    fy: 427.1672058105469
+    cx: 425.8807373046875
+    cy: 231.84600830078125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 430.0467224121094
+    fy: 430.0467224121094
+    cx: 432.4931335449219
+    cy: 242.5410919189453
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+place_shoes_on_rack:
+  robot: arx5_2
+  global_view:
+    fx: 427.3970031738281
+    fy: 427.3970031738281
+    cx: 425.15313720703125
+    cy: 234.65797424316406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.6697998046875
+    fy: 425.6697998046875
+    cx: 428.2857360839844
+    cy: 238.3005828857422
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.230712890625
+    fy: 427.230712890625
+    cx: 429.4078369140625
+    cy: 232.8637237548828
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+plug_in_network_cable:
+  robot: aloha_6
+  right_wrist_view:
+    fx: 427.0931396484375
+    fy: 427.0931396484375
+    cx: 421.8631286621094
+    cy: 240.696533203125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 432.7204895019531
+    fy: 432.7204895019531
+    cx: 426.6180114746094
+    cy: 242.8095703125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.6974792480469
+    fy: 426.6974792480469
+    cx: 431.48406982421875
+    cy: 238.22824096679688
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+pour_fries_into_plate:
+  robot: aloha_5
+  global_view:
+    fx: 425.7146911621094
+    fy: 425.7146911621094
+    cx: 426.2855529785156
+    cy: 236.46229553222656
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  right_wrist_view:
+    fx: 425.68597412109375
+    fy: 425.68597412109375
+    cx: 421.49798583984375
+    cy: 241.40357971191406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.70977783203125
+    fy: 426.70977783203125
+    cx: 428.33660888671875
+    cy: 245.65318298339844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+press_three_buttons:
+  robot: franka_4
+  side_view:
+    fx: 429.8192443847656
+    fy: 429.8192443847656
+    cx: 424.4450378417969
+    cy: 246.01361083984375
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 423.76190185546875
+    fy: 423.76190185546875
+    cx: 425.67901611328125
+    cy: 240.1424102783203
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 429.24072265625
+    fy: 429.24072265625
+    cx: 423.5895690917969
+    cy: 241.73475646972656
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+put_cup_on_coaster:
+  robot: arx5_2
+  global_view:
+    fx: 427.3970031738281
+    fy: 427.3970031738281
+    cx: 425.15313720703125
+    cy: 234.65797424316406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.6697998046875
+    fy: 425.6697998046875
+    cx: 428.2857360839844
+    cy: 238.3005828857422
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.230712890625
+    fy: 427.230712890625
+    cx: 429.4078369140625
+    cy: 232.8637237548828
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+put_opener_in_drawer:
+  robot: aloha_4
+  right_wrist_view:
+    fx: 426.83135986328125
+    fy: 426.83135986328125
+    cx: 427.802001953125
+    cy: 242.96075439453125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.80926513671875
+    fy: 426.80926513671875
+    cx: 426.418701171875
+    cy: 246.9143829345703
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.2816162109375
+    fy: 426.2816162109375
+    cx: 427.83306884765625
+    cy: 240.04043579101562
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+put_pen_into_pencil_case:
+  robot: aloha_5
+  global_view:
+    fx: 425.7146911621094
+    fy: 425.7146911621094
+    cx: 426.2855529785156
+    cy: 236.46229553222656
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  right_wrist_view:
+    fx: 425.68597412109375
+    fy: 425.68597412109375
+    cx: 421.49798583984375
+    cy: 241.40357971191406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.70977783203125
+    fy: 426.70977783203125
+    cx: 428.33660888671875
+    cy: 245.65318298339844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+scan_QR_code:
+  robot: aloha_3
+  right_wrist_view:
+    fx: 427.4950256347656
+    fy: 427.4950256347656
+    cx: 431.2913818359375
+    cy: 232.64627075195312
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 427.47137451171875
+    fy: 427.47137451171875
+    cx: 428.7495422363281
+    cy: 245.3848114013672
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 429.05499267578125
+    fy: 429.05499267578125
+    cx: 425.90643310546875
+    cy: 248.73873901367188
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+search_green_boxes:
+  robot: arx5_2
+  global_view:
+    fx: 427.3970031738281
+    fy: 427.3970031738281
+    cx: 425.15313720703125
+    cy: 234.65797424316406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.6697998046875
+    fy: 425.6697998046875
+    cx: 428.2857360839844
+    cy: 238.3005828857422
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.230712890625
+    fy: 427.230712890625
+    cx: 429.4078369140625
+    cy: 232.8637237548828
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+set_the_plates:
+  robot: ur5_3
+  global_view:
+    fx: 436.83697509765625
+    fy: 436.83697509765625
+    cx: 428.31451416015625
+    cy: 245.5897979736328
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D455
+  wrist_view:
+    fx: 426.9915466308594
+    fy: 426.9915466308594
+    cx: 427.1142578125
+    cy: 237.14511108398438
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+shred_scrap_paper:
+  robot: ur5_2
+  global_view:
+    fx: 430.4409484863281
+    fy: 430.4409484863281
+    cx: 427.6969909667969
+    cy: 242.4362030029297
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 426.4693298339844
+    fy: 426.4693298339844
+    cx: 428.9852600097656
+    cy: 244.34507751464844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+sort_books:
+  robot: ur5_2
+  global_view:
+    fx: 430.4409484863281
+    fy: 430.4409484863281
+    cx: 427.6969909667969
+    cy: 242.4362030029297
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 426.4693298339844
+    fy: 426.4693298339844
+    cx: 428.9852600097656
+    cy: 244.34507751464844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+sort_electronic_products:
+  robot: arx5_9
+  wrist_view:
+    fx: 383.3115234375
+    fy: 383.3115234375
+    cx: 320.2862243652344
+    cy: 238.184326171875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.78082275390625
+    fy: 426.78082275390625
+    cx: 428.6365966796875
+    cy: 245.2176513671875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.47906494140625
+    fy: 425.47906494140625
+    cx: 425.19256591796875
+    cy: 236.90135192871094
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+stack_bowls:
+  robot: aloha_5
+  global_view:
+    fx: 425.7146911621094
+    fy: 425.7146911621094
+    cx: 426.2855529785156
+    cy: 236.46229553222656
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  right_wrist_view:
+    fx: 425.68597412109375
+    fy: 425.68597412109375
+    cx: 421.49798583984375
+    cy: 241.40357971191406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.70977783203125
+    fy: 426.70977783203125
+    cx: 428.33660888671875
+    cy: 245.65318298339844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+stack_color_blocks:
+  robot: ur5_2
+  global_view:
+    fx: 430.4409484863281
+    fy: 430.4409484863281
+    cx: 427.6969909667969
+    cy: 242.4362030029297
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 426.4693298339844
+    fy: 426.4693298339844
+    cx: 428.9852600097656
+    cy: 244.34507751464844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+stick_tape_to_box:
+  robot: aloha_4
+  right_wrist_view:
+    fx: 426.83135986328125
+    fy: 426.83135986328125
+    cx: 427.802001953125
+    cy: 242.96075439453125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.80926513671875
+    fy: 426.80926513671875
+    cx: 426.418701171875
+    cy: 246.9143829345703
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.2816162109375
+    fy: 426.2816162109375
+    cx: 427.83306884765625
+    cy: 240.04043579101562
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+sweep_the_rubbish:
+  robot: aloha_3
+  right_wrist_view:
+    fx: 427.4950256347656
+    fy: 427.4950256347656
+    cx: 431.2913818359375
+    cy: 232.64627075195312
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 427.47137451171875
+    fy: 427.47137451171875
+    cx: 428.7495422363281
+    cy: 245.3848114013672
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 429.05499267578125
+    fy: 429.05499267578125
+    cx: 425.90643310546875
+    cy: 248.73873901367188
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+turn_on_faucet:
+  robot: aloha_5
+  global_view:
+    fx: 425.7146911621094
+    fy: 425.7146911621094
+    cx: 426.2855529785156
+    cy: 236.46229553222656
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  right_wrist_view:
+    fx: 425.68597412109375
+    fy: 425.68597412109375
+    cx: 421.49798583984375
+    cy: 241.40357971191406
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  left_wrist_view:
+    fx: 426.70977783203125
+    fy: 426.70977783203125
+    cx: 428.33660888671875
+    cy: 245.65318298339844
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+turn_on_light_switch:
+  robot: arx5_9
+  wrist_view:
+    fx: 383.3115234375
+    fy: 383.3115234375
+    cx: 320.2862243652344
+    cy: 238.184326171875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.78082275390625
+    fy: 426.78082275390625
+    cx: 428.6365966796875
+    cy: 245.2176513671875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.47906494140625
+    fy: 425.47906494140625
+    cx: 425.19256591796875
+    cy: 236.90135192871094
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+water_potted_plant:
+  robot: arx5_1
+  side_view:
+    fx: 426.93853759765625
+    fy: 426.93853759765625
+    cx: 429.01611328125
+    cy: 239.2858428955078
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  wrist_view:
+    fx: 427.1672058105469
+    fy: 427.1672058105469
+    cx: 425.8807373046875
+    cy: 231.84600830078125
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 430.0467224121094
+    fy: 430.0467224121094
+    cx: 432.4931335449219
+    cy: 242.5410919189453
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+wipe_the_table:
+  robot: arx5_9
+  wrist_view:
+    fx: 383.3115234375
+    fy: 383.3115234375
+    cx: 320.2862243652344
+    cy: 238.184326171875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  global_view:
+    fx: 426.78082275390625
+    fy: 426.78082275390625
+    cx: 428.6365966796875
+    cy: 245.2176513671875
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
+  side_view:
+    fx: 425.47906494140625
+    fy: 425.47906494140625
+    cx: 425.19256591796875
+    cy: 236.90135192871094
+    coeffs: [0.0, 0.0, 0.0, 0.0, 0.0]
+    name: Intel RealSense D435I
